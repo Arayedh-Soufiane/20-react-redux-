@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-// import Counter from "./reducer/Conter";
-// import reducer from "./reducer/routeReducer";
 import { connect } from "react-redux";
+import { increase, decrise } from "./action/Action";
 
 class App extends Component {
   render() {
@@ -30,14 +29,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    increase: () =>
-      dispatch({
-        type: "INCREASE",
-      }),
-    decrise: () =>
-      dispatch({
-        type: "DECRISE",
-      }),
+    increase: () => dispatch(increase()),
+    decrise: () => dispatch(decrise()),
   };
 }
 
